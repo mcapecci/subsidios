@@ -12,9 +12,4 @@ public interface IncisoProyectoRepository extends JpaRepository<IncisoProyecto, 
 
 	List<IncisoProyecto> findByProyectoId(long idProyecto);
 
-	/*
-	@Query("select ip from INCISO_PROYECTO ip where ip.id_proyecto = :idProyecto")
-	List<IncisoProyecto> findAllByProyectoId(@Param("idProyecto") long idProyecto);
-	*/
-
 }
