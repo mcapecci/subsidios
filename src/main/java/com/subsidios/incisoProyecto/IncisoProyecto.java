@@ -16,6 +16,8 @@ public class IncisoProyecto {
 	@GeneratedValue
 	private Long id;
 	private String nombre;
+	private int anio;
+	private float monto; 
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_PROYECTO", nullable = false)
@@ -26,10 +28,20 @@ public class IncisoProyecto {
 		super();
 	}
 
-	public IncisoProyecto(Long id, String nombre, Proyecto proyecto) {
+	public IncisoProyecto(Long id, String nombre, int anio, float monto, Proyecto proyecto) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
+		this.anio = anio;
+		this.monto = monto;
+		this.proyecto = proyecto;
+	}
+	
+	public IncisoProyecto(String nombre, int anio, float monto, Proyecto proyecto) {
+		super();
+		this.nombre = nombre;
+		this.anio = anio;
+		this.monto = monto;
 		this.proyecto = proyecto;
 	}
 	public Long getId() {
@@ -49,6 +61,22 @@ public class IncisoProyecto {
 	}
 	public void setProyecto(Proyecto proyecto) {
 		this.proyecto = proyecto;
+	}
+
+	public int getAnio() {
+		return anio;
+	}
+
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+	
+	public float getMonto() {
+		return monto;
+	}
+
+	public void setMonto(float monto) {
+		this.monto = monto;
 	}
 		
 }
